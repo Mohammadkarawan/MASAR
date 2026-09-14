@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>إرسال شحنة | مسار</title>
+
+<style>
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background: #f5f7fa;
+}
+
+header {
+background: #111827;
+color: white;
+padding: 25px;
+text-align: center;
+}
+
+header h1 {
+margin: 0;
+font-size: 32px;
+}
+
+.container {
+max-width: 600px;
+margin: 40px auto;
+background: white;
+padding: 30px;
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+h2 {
+text-align: center;
+margin-bottom: 30px;
+}
+
+label {
+display: block;
+margin-top: 18px;
+margin-bottom: 7px;
+font-weight: bold;
+}
+
+input,
+select,
+textarea {
+width: 100%;
+padding: 13px;
+box-sizing: border-box;
+border: 1px solid #ddd;
+border-radius: 8px;
+font-size: 16px;
+}
+
+textarea {
+height: 100px;
+resize: vertical;
+}
+
+button {
+width: 100%;
+margin-top: 25px;
+padding: 15px;
+background: #111827;
+color: white;
+border: none;
+border-radius: 8px;
+font-size: 18px;
+cursor: pointer;
+}
+
+button:hover {
+opacity: 0.9;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>مسار | MASAR</h1>
+</header>
+
+<div class="container">
+
+<h2>إرسال شحنة</h2>
+
+<label>اسم المستلم</label>
+<input type="text" placeholder="أدخل اسم المستلم">
+
+<label>رقم هاتف المستلم</label>
+<input type="tel" placeholder="أدخل رقم الهاتف">
+
+<label>المحافظة</label>
+<select>
+<option>اختر المحافظة</option>
+<option>دمشق</option>
+<option>ريف دمشق</option>
+<option>حلب</option>
+<option>حمص</option>
+<option>حماة</option>
+<option>اللاذقية</option>
+<option>طرطوس</option>
+<option>دير الزور</option>
+<option>الرقة</option>
+<option>الحسكة</option>
+<option>درعا</option>
+<option>السويداء</option>
+<option>القنيطرة</option>
+<option>إدلب</option>
+</select>
+
+<label>عنوان الاستلام</label>
+<input type="text" placeholder="أدخل عنوان الاستلام">
+
+<label>عنوان التسليم</label>
+<input type="text" placeholder="أدخل عنوان التسليم">
+
+<label>محتوى الشحنة</label>
+<input type="text" placeholder="مثال: ملابس، مستندات، أجهزة">
+
+<label>ملاحظات إضافية</label>
+<textarea placeholder="أي ملاحظات عن الشحنة"></textarea>
+
+<button type="button">
+إنشاء الشحنة
+</button>
+
+</div>
+
+</body>
+
+</html>
