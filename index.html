@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,313 +20,607 @@ body {
 margin: 0;
 font-family: Arial, Tahoma, sans-serif;
 background: #f5f7fa;
-color: #10233d;
+color: #102b48;
 }
 
-/* ===== Header ===== */
+/* ================= HEADER ================= */
 
 header {
-height: 105px;
-background: #ffffff;
+height: 100px;
+background: white;
 display: flex;
 align-items: center;
 justify-content: space-between;
-padding: 12px 6%;
-box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+padding: 10px 4%;
+box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 position: relative;
-z-index: 10;
+z-index: 20;
 }
 
-/* الشعار - يظهر الشعار واسم مسار فقط */
-.logo-box {
+.logo {
 width: 145px;
-height: 82px;
+height: 80px;
 overflow: hidden;
 display: flex;
-align-items: flex-start;
 justify-content: center;
+align-items: flex-start;
 }
 
-.logo-box img {
+.logo img {
 width: 145px;
 height: 145px;
 object-fit: cover;
 object-position: center top;
-display: block;
 }
 
-.login-btn {
-background: #b77a18;
+.login {
+background: #b47a1b;
 color: white;
 text-decoration: none;
 padding: 14px 25px;
-border-radius: 12px;
-font-size: 19px;
+border-radius: 10px;
+font-size: 18px;
 font-weight: bold;
-transition: 0.2s;
 }
 
-.login-btn:hover {
-background: #9d6611;
-transform: translateY(-1px);
+.menu {
+display: flex;
+gap: 35px;
+align-items: center;
+font-size: 17px;
+font-weight: bold;
 }
 
-/* ===== Hero ===== */
+.menu a {
+text-decoration: none;
+color: #102b48;
+}
+
+.menu .active {
+color: #b47a1b;
+border-bottom: 3px solid #b47a1b;
+padding-bottom: 8px;
+}
+
+.hamburger {
+font-size: 32px;
+color: #102b48;
+}
+
+/* ================= HERO ================= */
 
 .hero {
-min-height: 650px;
+min-height: 560px;
 position: relative;
 overflow: hidden;
-padding: 100px 6% 70px;
 display: flex;
 align-items: center;
-justify-content: center;
 background:
-radial-gradient(
-circle at 20% 35%,
-#f2eadc 0%,
-#f8f5ef 42%,
-#ffffff 75%
+linear-gradient(
+90deg,
+rgba(255,255,255,0.96),
+rgba(248,244,235,0.92)
 );
 }
 
-.hero::before {
-content: "";
+.hero-bg {
 position: absolute;
-width: 780px;
-height: 780px;
-background: #f2ede3;
-border-radius: 50%;
-left: -300px;
-top: -100px;
-opacity: 0.8;
+inset: 0;
+background:
+radial-gradient(
+circle at 80% 45%,
+#e8e0d2 0,
+#f7f4ee 42%,
+#ffffff 78%
+);
 }
 
 .hero-content {
+width: 100%;
+max-width: 1200px;
+margin: auto;
+padding: 70px 6%;
 position: relative;
 z-index: 2;
-width: 100%;
-max-width: 1100px;
-text-align: center;
+}
+
+.hero-text {
+max-width: 680px;
+text-align: right;
 }
 
 .hero-title {
 margin: 0;
-font-size: clamp(38px, 6vw, 72px);
-font-weight: 800;
-line-height: 1.25;
-color: #102f50;
+font-size: clamp(42px, 6vw, 76px);
+line-height: 1.2;
+font-weight: 900;
+color: #102b48;
 }
 
-.hero-title .gold {
-color: #b77a18;
+.gold {
+color: #b47a1b;
 }
 
-.hero-text {
-margin: 25px auto 40px;
-max-width: 850px;
-font-size: clamp(20px, 3vw, 29px);
+.hero-description {
+font-size: 24px;
 line-height: 1.7;
-color: #173553;
+margin: 20px 0 30px;
+color: #173653;
 }
 
-/* ===== Buttons ===== */
-
-.hero-buttons {
+.buttons {
 display: flex;
-justify-content: center;
-gap: 20px;
+gap: 15px;
 flex-wrap: wrap;
 }
 
-.main-btn {
-width: 320px;
-min-height: 82px;
-border-radius: 18px;
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 12px;
+.btn {
+min-width: 250px;
+padding: 18px 30px;
+border-radius: 12px;
+color: white;
 text-decoration: none;
-font-size: 27px;
-font-weight: bold;
-transition: 0.2s;
-}
-
-.send-btn {
-background: #c08721;
-color: white;
-}
-
-.track-btn {
-background: #123554;
-color: white;
-}
-
-.main-btn:hover {
-transform: translateY(-3px);
-box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.icon {
-font-size: 30px;
-}
-
-/* ===== Features ===== */
-
-.features {
-position: relative;
-z-index: 3;
-max-width: 1050px;
-margin: -10px auto 80px;
-padding: 0 25px;
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 0;
-}
-
-.feature {
-min-height: 125px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
 text-align: center;
-border-left: 2px solid #c89a4b;
-padding: 10px;
-}
-
-.feature:last-child {
-border-left: none;
-}
-
-.feature-icon {
-font-size: 43px;
-margin-bottom: 10px;
-}
-
-.feature-title {
-font-size: 21px;
+font-size: 22px;
 font-weight: bold;
-color: #173553;
 }
 
-/* ===== Footer ===== */
-
-footer {
-background: #102f50;
-color: white;
-text-align: center;
-padding: 30px 15px;
+.send {
+background: #b47a1b;
 }
 
-footer h3 {
-margin: 0 0 10px;
-font-size: 25px;
+.track {
+background: #123654;
 }
 
-footer p {
-margin: 5px 0;
-color: #e9edf2;
+/* صورة ديكورية للطريق */
+
+.road-art {
+position: absolute;
+left: 0;
+bottom: 0;
+width: 47%;
+height: 80%;
+background:
+linear-gradient(
+145deg,
+transparent 0 25%,
+rgba(18,54,84,0.08) 25% 27%,
+transparent 27%
+);
+opacity: 0.9;
 }
 
-/* ===== Mobile ===== */
-
-@media (max-width: 700px) {
-
-header {
-height: 92px;
-padding: 8px 20px;
+.van {
+position: absolute;
+left: 3%;
+bottom: 35px;
+width: 330px;
+height: 175px;
+background: white;
+border-radius: 25px 35px 18px 18px;
+box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+border: 2px solid #ddd;
+transform: skewY(-1deg);
 }
 
-.logo-box {
-width: 115px;
-height: 68px;
-}
-
-.logo-box img {
-width: 115px;
-height: 115px;
-}
-
-.login-btn {
-padding: 11px 18px;
-font-size: 17px;
+.van::before {
+content: "";
+position: absolute;
+right: -70px;
+top: 45px;
+width: 80px;
+height: 100px;
+background: #d8d8d8;
 border-radius: 10px;
 }
 
-.hero {
-min-height: 650px;
-padding: 75px 20px 55px;
+.van-logo {
+position: absolute;
+top: 35px;
+right: 85px;
+width: 120px;
+height: 90px;
+overflow: hidden;
 }
 
-.hero::before {
-width: 650px;
-height: 650px;
-left: -270px;
-top: 20px;
+.van-logo img {
+width: 120px;
+height: 120px;
+object-fit: cover;
+object-position: center top;
 }
 
-.hero-title {
+/* ================= QUICK FEATURES ================= */
+
+.quick {
+background: white;
+max-width: 1150px;
+margin: -35px auto 45px;
+position: relative;
+z-index: 5;
+border-radius: 22px;
+box-shadow: 0 5px 25px rgba(0,0,0,0.10);
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+overflow: hidden;
+}
+
+.quick-item {
+padding: 25px 15px;
+text-align: center;
+border-left: 1px solid #ddd;
+}
+
+.quick-item:last-child {
+border-left: none;
+}
+
+.quick-icon {
+font-size: 38px;
+margin-bottom: 8px;
+}
+
+.quick-number {
+color: #b47a1b;
 font-size: 40px;
-line-height: 1.35;
+font-weight: bold;
+margin: 0;
 }
 
-.hero-text {
-font-size: 21px;
-line-height: 1.7;
-margin: 22px auto 30px;
+.quick-title {
+font-size: 22px;
+font-weight: bold;
+margin: 3px 0;
 }
 
-.hero-buttons {
-flex-direction: row;
-flex-wrap: nowrap;
-gap: 12px;
+.quick-text {
+margin: 0;
+color: #536273;
+font-size: 15px;
 }
 
-.main-btn {
-width: 50%;
-min-height: 75px;
-font-size: 20px;
-border-radius: 15px;
-padding: 10px;
+/* ================= HOW IT WORKS ================= */
+
+.section {
+max-width: 1150px;
+margin: 0 auto 45px;
+padding: 0 20px;
 }
 
-.icon {
+.section-title {
+text-align: center;
+font-size: 35px;
+margin: 15px 0 5px;
+color: #102b48;
+}
+
+.section-subtitle {
+text-align: center;
+color: #596979;
+font-size: 18px;
+margin-bottom: 25px;
+}
+
+.steps {
+background: white;
+border-radius: 20px;
+padding: 35px 25px;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 35px;
+box-shadow: 0 3px 18px rgba(0,0,0,0.06);
+}
+
+.step {
+text-align: center;
+position: relative;
+}
+
+.step-number {
+width: 48px;
+height: 48px;
+border-radius: 50%;
+background: #b47a1b;
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto 12px;
 font-size: 23px;
+font-weight: bold;
 }
 
-.features {
-grid-template-columns: repeat(4, 1fr);
-padding: 0 10px;
-margin: 0 auto 60px;
+.step-icon {
+font-size: 45px;
+margin-bottom: 8px;
 }
 
-.feature {
-min-height: 105px;
-padding: 5px;
-border-left: 1px solid #c89a4b;
+.step h3 {
+font-size: 23px;
+margin: 5px 0;
 }
 
-.feature-icon {
-font-size: 28px;
-margin-bottom: 7px;
+.step p {
+color: #536273;
+font-size: 17px;
+line-height: 1.6;
+margin: 5px 0;
 }
 
-.feature-title {
-font-size: 14px;
+.arrow {
+position: absolute;
+top: 65px;
+left: -25px;
+color: #b47a1b;
+font-size: 30px;
 }
+
+/* ================= MAP + SERVICES ================= */
+
+.lower {
+max-width: 1150px;
+margin: 0 auto 50px;
+padding: 0 20px;
+display: grid;
+grid-template-columns: 1.2fr 1fr;
+gap: 20px;
+}
+
+.map-box {
+background: #123654;
+border-radius: 20px;
+min-height: 350px;
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding: 30px;
+position: relative;
+overflow: hidden;
+}
+
+.map-shape {
+font-size: 150px;
+opacity: 0.25;
+}
+
+.map-content {
+position: absolute;
+z-index: 2;
+}
+
+.map-content h2 {
+font-size: 34px;
+margin: 10px;
+}
+
+.map-content p {
+font-size: 21px;
+}
+
+.services {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 15px;
+}
+
+.service {
+background: white;
+border-radius: 18px;
+padding: 25px 15px;
+text-align: center;
+box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+}
+
+.service-icon {
+font-size: 38px;
+}
+
+.service h3 {
+margin: 10px 0 5px;
+font-size: 20px;
+}
+
+.service p {
+color: #596979;
+line-height: 1.5;
+margin: 0;
+}
+
+/* ================= FOOTER ================= */
 
 footer {
-padding: 25px 10px;
+background: #102b48;
+color: white;
+padding: 40px 7% 25px;
+}
+
+.footer-grid {
+max-width: 1150px;
+margin: auto;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 30px;
 }
 
 footer h3 {
-font-size: 20px;
+font-size: 24px;
+margin-top: 0;
 }
 
-footer p {
+footer p,
+footer a {
+color: #e4e9ef;
+line-height: 2;
+text-decoration: none;
+}
+
+.footer-logo {
+width: 150px;
+height: 100px;
+overflow: hidden;
+}
+
+.footer-logo img {
+width: 150px;
+height: 150px;
+object-fit: cover;
+object-position: center top;
+}
+
+.copyright {
+text-align: center;
+border-top: 1px solid rgba(255,255,255,0.2);
+margin-top: 30px;
+padding-top: 20px;
+color: #dce3ea;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 800px) {
+
+header {
+height: 90px;
+padding: 8px 18px;
+}
+
+.menu {
+display: none;
+}
+
+.logo {
+width: 110px;
+height: 68px;
+}
+
+.logo img {
+width: 110px;
+height: 110px;
+}
+
+.login {
+font-size: 16px;
+padding: 12px 18px;
+}
+
+.hero {
+min-height: 560px;
+}
+
+.hero-content {
+padding: 65px 22px;
+}
+
+.hero-text {
+max-width: 100%;
+text-align: center;
+}
+
+.hero-title {
+font-size: 42px;
+line-height: 1.3;
+}
+
+.hero-description {
+font-size: 19px;
+line-height: 1.7;
+}
+
+.buttons {
+flex-direction: row;
+flex-wrap: nowrap;
+gap: 10px;
+}
+
+.btn {
+min-width: 0;
+width: 50%;
+padding: 16px 8px;
+font-size: 18px;
+}
+
+.van {
+display: none;
+}
+
+.quick {
+margin: -20px 15px 35px;
+grid-template-columns: repeat(3, 1fr);
+border-radius: 17px;
+}
+
+.quick-item {
+padding: 17px 5px;
+}
+
+.quick-number {
+font-size: 30px;
+}
+
+.quick-title {
+font-size: 15px;
+}
+
+.quick-text {
+font-size: 11px;
+}
+
+.quick-icon {
+font-size: 27px;
+}
+
+.section {
+padding: 0 15px;
+}
+
+.section-title {
+font-size: 29px;
+}
+
+.steps {
+grid-template-columns: 1fr;
+gap: 25px;
+}
+
+.arrow {
+display: none;
+}
+
+.lower {
+grid-template-columns: 1fr;
+padding: 0 15px;
+}
+
+.map-box {
+min-height: 280px;
+}
+
+.services {
+grid-template-columns: repeat(2, 1fr);
+}
+
+.service {
+padding: 18px 8px;
+}
+
+.service h3 {
+font-size: 17px;
+}
+
+.service p {
 font-size: 13px;
+}
+
+.footer-grid {
+grid-template-columns: 1fr;
+text-align: center;
+}
+
+.footer-logo {
+margin: auto;
 }
 }
 </style>
@@ -333,49 +628,74 @@ font-size: 13px;
 
 <body>
 
-<!-- ===== Header ===== -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
-<a href="login.html" class="login-btn">
-تسجيل الدخول
+<a href="login.html" class="login">
+👤 تسجيل الدخول
 </a>
 
-<div class="logo-box">
+<nav class="menu">
+<a href="index.html" class="active">الرئيسية</a>
+<a href="send.html">إرسال شحنة</a>
+<a href="tracking.html">تتبع شحنة</a>
+<a href="#about">من نحن</a>
+</nav>
+
+<div class="logo">
 <img src="masar-logo-full-details.png" alt="مسار MASAR">
+</div>
+
+<div class="hamburger">
+☰
 </div>
 
 </header>
 
 
-<!-- ===== Hero ===== -->
-
-<main>
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
+<div class="hero-bg"></div>
+<div class="road-art"></div>
+
 <div class="hero-content">
+
+<div class="hero-text">
 
 <h1 class="hero-title">
 مسارك الآمن
+<br>
 <span class="gold">بين كل المدن</span>
 </h1>
 
-<p class="hero-text">
-خدمة شحن وتوصيل موثوقة وسريعة عبر شبكة مراكز مسار
+<p class="hero-description">
+خدمة شحن وتوصيل موثوقة داخل سوريا
+<br>
+عبر شبكة مراكز مسار
 </p>
 
-<div class="hero-buttons">
+<div class="buttons">
 
-<a href="tracking.html" class="main-btn track-btn">
-<span class="icon">🔍</span>
-تتبع شحنة
+<a href="send.html" class="btn send">
+📦 إرسال شحنة
 </a>
 
-<a href="send.html" class="main-btn send-btn">
-<span class="icon">📦</span>
-إرسال شحنة
+<a href="tracking.html" class="btn track">
+🔍 تتبع شحنة
 </a>
+
+</div>
+
+</div>
+
+<div class="van">
+
+<div class="van-logo">
+<img src="masar-logo-full-details.png" alt="MASAR">
+</div>
 
 </div>
 
@@ -384,48 +704,329 @@ font-size: 13px;
 </section>
 
 
-<!-- ===== Features ===== -->
+<!-- ================= QUICK NUMBERS ================= -->
 
-<section class="features">
+<section class="quick">
 
-<div class="feature">
-<div class="feature-icon">🛡️</div>
-<div class="feature-title">أمان</div>
+<div class="quick-item">
+
+<div class="quick-icon">🎧</div>
+
+<p class="quick-title">
+خدمة عملاء
+</p>
+
+<p class="quick-number">
+24 ساعة
+</p>
+
+<p class="quick-text">
+دائماً لخدمتكم
+</p>
+
 </div>
 
-<div class="feature">
-<div class="feature-icon">⚡</div>
-<div class="feature-title">سرعة</div>
+
+<div class="quick-item">
+
+<div class="quick-icon">📍</div>
+
+<p class="quick-number">
+500
+</p>
+
+<p class="quick-title">
+مركز استلام وتسليم
+</p>
+
+<p class="quick-text">
+في جميع المحافظات
+</p>
+
 </div>
 
-<div class="feature">
-<div class="feature-icon">📍</div>
-<div class="feature-title">تتبع مباشر</div>
-</div>
 
-<div class="feature">
-<div class="feature-icon">📦</div>
-<div class="feature-title">لكل المدن</div>
+<div class="quick-item">
+
+<div class="quick-icon">🗺️</div>
+
+<p class="quick-number">
+14
+</p>
+
+<p class="quick-title">
+محافظة
+</p>
+
+<p class="quick-text">
+نصل إلى كل سوريا
+</p>
+
 </div>
 
 </section>
 
-</main>
+
+<!-- ================= HOW MASAR WORKS ================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+كيف يعمل مسار؟
+</h2>
+
+<p class="section-subtitle">
+خطوات بسيطة
+</p>
+
+<div class="steps">
+
+<div class="step">
+
+<div class="step-number">
+1
+</div>
+
+<div class="step-icon">
+🏪
+</div>
+
+<h3>
+المركز الأول
+</h3>
+
+<p>
+تسلّم شحنتك في أقرب مركز مسار
+</p>
+
+</div>
 
 
-<!-- ===== Footer ===== -->
+<div class="step">
 
-<footer>
+<div class="step-number">
+2
+</div>
 
-<h3>مسار | MASAR</h3>
+<div class="step-icon">
+🚚
+</div>
+
+<h3>
+التوصيل
+</h3>
+
+<p>
+نقل موثوق وسريع
+</p>
+
+<span class="arrow">
+←
+</span>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+3
+</div>
+
+<div class="step-icon">
+🏪
+</div>
+
+<h3>
+المركز الأخير
+</h3>
+
+<p>
+تصل شحنتك إلى مركز مسار
+في المدينة المطلوبة
+</p>
+
+<span class="arrow">
+←
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= MAP + SERVICES ================= -->
+
+<section class="lower">
+
+<div class="map-box">
+
+<div class="map-shape">
+🗺️
+</div>
+
+<div class="map-content">
+
+<h2>
+14 محافظة
+</h2>
+
+<p>
+مسار معك دائماً
+</p>
+
+<p>
+نصل إلى جميع المدن
+</p>
+
+</div>
+
+</div>
+
+
+<div class="services">
+
+<div class="service">
+
+<div class="service-icon">
+🛡️
+</div>
+
+<h3>
+شحن آمن
+</h3>
+
+<p>
+نحرص على سلامة جميع شحناتك
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+🕐
+</div>
+
+<h3>
+توصيل سريع
+</h3>
+
+<p>
+نقل موثوق وسريع بين المدن
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+💰
+</div>
+
+<h3>
+أسعار مناسبة
+</h3>
+
+<p>
+خدمة موثوقة بتكلفة عادلة
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+👥
+</div>
+
+<h3>
+دعم دائم
+</h3>
+
+<p>
+خدمة عملاء 24 ساعة للإجابة على استفساراتكم
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="about">
+
+<div class="footer-grid">
+
+<div>
+
+<div class="footer-logo">
+<img src="masar-logo-full-details.png" alt="مسار MASAR">
+</div>
 
 <p>
 شحن · توصيل · بين مدينتك
 </p>
 
+</div>
+
+
+<div>
+
+<h3>
+روابط سريعة
+</h3>
+
 <p>
-© 2026 MASAR - جميع الحقوق محفوظة
+<a href="index.html">الرئيسية</a>
 </p>
+
+<p>
+<a href="send.html">إرسال شحنة</a>
+</p>
+
+<p>
+<a href="tracking.html">تتبع شحنة</a>
+</p>
+
+<p>
+<a href="#about">من نحن</a>
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+مسار
+</h3>
+
+<p>
+أقرب إليك دائماً
+</p>
+
+<p>
+خدمة شحن وتوصيل موثوقة وسريعة
+داخل سوريا.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+© 2026 MASAR | مسار - جميع الحقوق محفوظة
+</div>
 
 </footer>
 
