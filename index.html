@@ -22,7 +22,7 @@ body {
 font-family: Arial, Tahoma, sans-serif;
 background: #faf9f5;
 color: #102b48;
-line-height: 1.7;
+line-height: 1.6;
 }
 
 a {
@@ -38,20 +38,20 @@ margin: auto;
 /* HEADER */
 
 header {
-background: #ffffff;
+background: white;
 border-bottom: 1px solid #e8e8e8;
 }
 
 .nav {
-min-height: 82px;
+min-height: 72px;
 display: flex;
 align-items: center;
 justify-content: space-between;
-gap: 25px;
+gap: 15px;
 }
 
 .logo-text {
-font-size: 38px;
+font-size: 31px;
 font-weight: 900;
 color: #102b48;
 letter-spacing: 1px;
@@ -59,8 +59,8 @@ letter-spacing: 1px;
 
 .nav-links {
 display: flex;
-gap: 28px;
-font-size: 16px;
+gap: 24px;
+font-size: 15px;
 font-weight: 700;
 }
 
@@ -68,29 +68,26 @@ font-weight: 700;
 color: #33485c;
 }
 
-.nav-links a:hover {
-color: #c89b3c;
-}
-
 .login-btn {
 background: #102b48;
 color: white;
-padding: 13px 28px;
-border-radius: 12px;
+padding: 10px 18px;
+border-radius: 10px;
 font-weight: 800;
-font-size: 17px;
+font-size: 15px;
+white-space: nowrap;
 }
 
 /* HERO */
 
 .hero {
-min-height: 610px;
+min-height: 560px;
 display: flex;
 align-items: center;
 background:
 radial-gradient(
 circle at 10% 30%,
-rgba(200,155,60,0.13),
+rgba(200,155,60,.13),
 transparent 35%
 ),
 #faf9f5;
@@ -106,36 +103,34 @@ margin: auto;
 font-size: clamp(42px, 6vw, 70px);
 line-height: 1.25;
 font-weight: 900;
-margin-bottom: 25px;
+margin-bottom: 22px;
 }
 
-.hero h1 .gold {
+.gold {
 color: #c89b3c;
 }
 
 .hero-description {
-max-width: 760px;
-margin: 0 auto 38px;
+max-width: 720px;
+margin: 0 auto 32px;
 color: #617080;
-font-size: 21px;
-line-height: 2;
+font-size: 19px;
+line-height: 1.9;
 }
 
 .hero-buttons {
 display: flex;
 justify-content: center;
-gap: 25px;
-flex-wrap: wrap;
+gap: 14px;
 }
 
 .btn {
-min-width: 220px;
-padding: 17px 30px;
-border-radius: 15px;
-font-size: 19px;
+min-width: 190px;
+padding: 14px 25px;
+border-radius: 13px;
+font-size: 17px;
 font-weight: 800;
 text-align: center;
-transition: .2s;
 }
 
 .btn-primary {
@@ -145,107 +140,101 @@ color: white;
 
 .btn-secondary {
 background: white;
-border: 3px solid #102b48;
+border: 2px solid #102b48;
 color: #102b48;
-}
-
-.btn:hover {
-transform: translateY(-2px);
 }
 
 /* STATS */
 
 .stats {
-padding: 20px 0 70px;
-background: #faf9f5;
+padding: 20px 0 65px;
 }
 
 .stats-grid {
 display: grid;
 grid-template-columns: repeat(3, 1fr);
-gap: 20px;
+gap: 15px;
 }
 
 .stat {
 background: white;
-border-radius: 20px;
-padding: 28px;
+border-radius: 17px;
+padding: 22px 10px;
 text-align: center;
-box-shadow: 0 10px 30px rgba(16,43,72,.07);
+box-shadow: 0 8px 25px rgba(16,43,72,.07);
 }
 
 .stat-number {
 color: #c89b3c;
-font-size: 40px;
+font-size: 32px;
 font-weight: 900;
 }
 
 .stat-title {
-color: #102b48;
-font-size: 18px;
+font-size: 15px;
 font-weight: 800;
 }
 
 /* SECTIONS */
 
 section {
-padding: 85px 0;
+padding: 70px 0;
 }
 
 .section-title {
 text-align: center;
-margin-bottom: 45px;
+margin-bottom: 35px;
 }
 
 .section-title h2 {
-font-size: 40px;
-margin-bottom: 10px;
+font-size: 34px;
+margin-bottom: 7px;
 }
 
 .section-title p {
 color: #718091;
-font-size: 17px;
+font-size: 15px;
 }
 
-/* HOW IT WORKS */
+/* HOW */
 
 .steps {
 display: grid;
 grid-template-columns: repeat(3, 1fr);
-gap: 22px;
+gap: 14px;
 }
 
 .step {
 background: white;
-border-radius: 20px;
-padding: 35px 25px;
+border-radius: 17px;
+padding: 25px 12px;
 text-align: center;
-box-shadow: 0 10px 30px rgba(16,43,72,.07);
-border-top: 4px solid #c89b3c;
+box-shadow: 0 8px 25px rgba(16,43,72,.07);
+border-top: 3px solid #c89b3c;
 }
 
 .step-number {
-width: 55px;
-height: 55px;
-margin: 0 auto 20px;
+width: 45px;
+height: 45px;
+margin: 0 auto 13px;
 border-radius: 50%;
 background: #102b48;
 color: white;
 display: flex;
 align-items: center;
 justify-content: center;
-font-size: 21px;
 font-weight: 900;
 }
 
 .step h3 {
-margin-bottom: 10px;
-font-size: 22px;
+font-size: 17px;
+margin-bottom: 7px;
 }
 
 .step p {
 color: #687888;
-font-size: 17px;
+font-size: 13px;
+line-height: 1.6;
 }
 
 /* COVERAGE */
@@ -253,22 +242,22 @@ font-size: 17px;
 .coverage {
 background: #102b48;
 color: white;
+text-align: center;
 }
 
 .coverage-box {
-text-align: center;
-max-width: 850px;
+max-width: 750px;
 margin: auto;
 }
 
 .coverage h2 {
-font-size: 42px;
-margin-bottom: 20px;
+font-size: 35px;
+margin-bottom: 15px;
 }
 
 .coverage p {
 color: #d4dce4;
-font-size: 19px;
+font-size: 17px;
 }
 
 /* SERVICES */
@@ -276,29 +265,31 @@ font-size: 19px;
 .services {
 display: grid;
 grid-template-columns: repeat(3, 1fr);
-gap: 22px;
+gap: 14px;
 }
 
 .service {
 background: white;
-padding: 30px;
-border-radius: 20px;
-box-shadow: 0 10px 30px rgba(16,43,72,.07);
+padding: 25px 12px;
+border-radius: 17px;
+box-shadow: 0 8px 25px rgba(16,43,72,.07);
 text-align: center;
 }
 
 .service-icon {
-font-size: 40px;
-margin-bottom: 15px;
+font-size: 32px;
+margin-bottom: 10px;
 }
 
 .service h3 {
-font-size: 21px;
-margin-bottom: 10px;
+font-size: 17px;
+margin-bottom: 7px;
 }
 
 .service p {
 color: #6b7a89;
+font-size: 13px;
+line-height: 1.6;
 }
 
 /* CTA */
@@ -309,14 +300,13 @@ background: #f0eadb;
 }
 
 .cta h2 {
-font-size: 40px;
-margin-bottom: 15px;
+font-size: 32px;
+margin-bottom: 10px;
 }
 
 .cta p {
 color: #667586;
-font-size: 18px;
-margin-bottom: 25px;
+margin-bottom: 22px;
 }
 
 /* FOOTER */
@@ -324,45 +314,53 @@ margin-bottom: 25px;
 footer {
 background: #0b2035;
 color: white;
-padding: 45px 0 25px;
+padding: 35px 0 20px;
 }
 
 .footer-content {
 display: flex;
 justify-content: space-between;
 align-items: center;
-gap: 30px;
 }
 
 .footer-name {
-font-size: 32px;
+font-size: 28px;
 font-weight: 900;
-letter-spacing: 1px;
 }
 
 .footer-text {
 color: #b9c5d0;
+font-size: 14px;
 }
 
 .copyright {
 text-align: center;
 border-top: 1px solid rgba(255,255,255,.12);
-margin-top: 30px;
-padding-top: 20px;
+margin-top: 25px;
+padding-top: 18px;
 color: #9eabb7;
-font-size: 14px;
+font-size: 12px;
 }
 
-/* MOBILE */
 
-@media (max-width: 800px) {
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+.container {
+width: 94%;
+}
+
+/* HEADER */
 
 .nav {
-min-height: 75px;
+min-height: 65px;
 }
 
 .logo-text {
-font-size: 32px;
+font-size: 27px;
 }
 
 .nav-links {
@@ -370,62 +368,183 @@ display: none;
 }
 
 .login-btn {
-padding: 12px 22px;
-font-size: 16px;
+padding: 9px 14px;
+font-size: 13px;
 }
 
+/* HERO */
+
 .hero {
-min-height: 600px;
-padding: 55px 0;
+min-height: 520px;
+padding: 45px 0;
 }
 
 .hero h1 {
-font-size: 46px;
+font-size: 42px;
 }
 
 .hero-description {
-font-size: 18px;
-line-height: 1.9;
+font-size: 16px;
+line-height: 1.8;
+padding: 0 8px;
 }
 
 .hero-buttons {
-gap: 15px;
+flex-direction: row;
+gap: 9px;
 }
 
 .btn {
-min-width: 190px;
-font-size: 17px;
+min-width: 0;
+width: 50%;
+padding: 13px 8px;
+font-size: 14px;
+}
+
+/* STATS */
+
+.stats {
+padding-bottom: 45px;
 }
 
 .stats-grid {
-grid-template-columns: 1fr;
+gap: 8px;
 }
 
-.steps {
-grid-template-columns: 1fr;
+.stat {
+padding: 18px 5px;
+border-radius: 13px;
 }
 
-.services {
-grid-template-columns: 1fr;
+.stat-number {
+font-size: 27px;
+}
+
+.stat-title {
+font-size: 12px;
+}
+
+/* SECTIONS */
+
+section {
+padding: 55px 0;
+}
+
+.section-title {
+margin-bottom: 25px;
 }
 
 .section-title h2 {
-font-size: 32px;
+font-size: 28px;
+}
+
+.section-title p {
+font-size: 13px;
+}
+
+/* HOW - HORIZONTAL */
+
+.steps {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 7px;
+}
+
+.step {
+padding: 18px 5px;
+border-radius: 12px;
+}
+
+.step-number {
+width: 34px;
+height: 34px;
+font-size: 14px;
+margin-bottom: 9px;
+}
+
+.step h3 {
+font-size: 13px;
+margin-bottom: 5px;
+}
+
+.step p {
+font-size: 10px;
+line-height: 1.45;
+}
+
+/* COVERAGE */
+
+.coverage {
+padding: 55px 0;
 }
 
 .coverage h2 {
-font-size: 34px;
+font-size: 29px;
 }
+
+.coverage p {
+font-size: 15px;
+}
+
+/* SERVICES - HORIZONTAL */
+
+.services {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 7px;
+}
+
+.service {
+padding: 18px 5px;
+border-radius: 12px;
+}
+
+.service-icon {
+font-size: 26px;
+margin-bottom: 7px;
+}
+
+.service h3 {
+font-size: 13px;
+margin-bottom: 5px;
+}
+
+.service p {
+font-size: 10px;
+line-height: 1.45;
+}
+
+/* CTA */
+
+.cta h2 {
+font-size: 27px;
+}
+
+.cta p {
+font-size: 14px;
+}
+
+/* FOOTER */
 
 .footer-content {
 flex-direction: column;
+gap: 10px;
 text-align: center;
 }
+
+.footer-name {
+font-size: 26px;
 }
+
+.footer-text {
+font-size: 12px;
+}
+}
+
 </style>
 </head>
 
+
 <body>
+
 
 <!-- HEADER -->
 
@@ -438,10 +557,23 @@ MASAR
 </div>
 
 <nav class="nav-links">
-<a href="#home">الرئيسية</a>
-<a href="#how">كيف يعمل مسار؟</a>
-<a href="#services">خدمات مسار</a>
-<a href="#coverage">التغطية</a>
+
+<a href="#home">
+الرئيسية
+</a>
+
+<a href="#how">
+كيف يعمل مسار؟
+</a>
+
+<a href="#services">
+خدمات مسار
+</a>
+
+<a href="#coverage">
+التغطية
+</a>
+
 </nav>
 
 <a href="login.html" class="login-btn">
@@ -462,15 +594,25 @@ MASAR
 <div class="container hero-content">
 
 <h1>
+
 مسارك الآمن
+
 <br>
-<span class="gold">بين كل المدن</span>
+
+<span class="gold">
+بين كل المدن
+</span>
+
 </h1>
 
+
 <p class="hero-description">
-خدمة شحن وتوصيل وطنية تربط المدن والمحافظات عبر
-شبكة من مراكز مسار، مع تتبع واضح وآمن لشحنتك.
+
+خدمة شحن وتوصيل وطنية تربط المدن والمحافظات
+عبر شبكة من مراكز مسار، مع تتبع واضح وآمن لشحنتك.
+
 </p>
+
 
 <div class="hero-buttons">
 
@@ -496,24 +638,41 @@ MASAR
 <div class="container stats-grid">
 
 <div class="stat">
-<div class="stat-number">14</div>
+
+<div class="stat-number">
+14
+</div>
+
 <div class="stat-title">
 محافظة
 </div>
+
 </div>
 
+
 <div class="stat">
-<div class="stat-number">500+</div>
+
+<div class="stat-number">
+500+
+</div>
+
 <div class="stat-title">
 مركز استلام وتسليم
 </div>
+
 </div>
 
+
 <div class="stat">
-<div class="stat-number">24/7</div>
+
+<div class="stat-number">
+24/7
+</div>
+
 <div class="stat-title">
 خدمة عملاء
 </div>
+
 </div>
 
 </div>
@@ -541,6 +700,7 @@ MASAR
 
 
 <div class="steps">
+
 
 <div class="step">
 
@@ -592,6 +752,7 @@ MASAR
 
 </div>
 
+
 </div>
 
 </div>
@@ -639,6 +800,7 @@ MASAR
 
 
 <div class="services">
+
 
 <div class="service">
 
@@ -690,6 +852,7 @@ MASAR
 
 </div>
 
+
 </div>
 
 </div>
@@ -719,6 +882,7 @@ MASAR
 
 </section>
 
+
 </main>
 
 
@@ -740,13 +904,17 @@ MASAR
 
 </div>
 
+
 <div class="copyright">
+
 © 2026 MASAR — جميع الحقوق محفوظة
+
 </div>
 
 </div>
 
 </footer>
+
 
 </body>
 
