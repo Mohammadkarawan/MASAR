@@ -1,82 +1,222 @@
-vv<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>إرسال شحنة | مسار</title>
+<title>إرسال شحنة | MASAR</title>
 
 <style>
-body {
+* {
+box-sizing: border-box;
 margin: 0;
+padding: 0;
+}
+
+body {
 font-family: Arial, sans-serif;
 background: #f5f7fa;
+color: #172033;
+line-height: 1.6;
 }
 
 header {
-background: #111827;
+background: #07152d;
 color: white;
-padding: 25px;
-text-align: center;
+padding: 20px 7%;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 
-header h1 {
-margin: 0;
-font-size: 32px;
+.logo {
+font-size: 27px;
+font-weight: bold;
+letter-spacing: 2px;
+}
+
+.back {
+color: white;
+text-decoration: none;
+border: 1px solid rgba(255,255,255,0.4);
+padding: 9px 18px;
+border-radius: 8px;
+font-size: 14px;
 }
 
 .container {
-max-width: 600px;
-margin: 40px auto;
-background: white;
-padding: 30px;
-border-radius: 12px;
-box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+max-width: 800px;
+margin: 45px auto;
+padding: 0 20px;
 }
 
-h2 {
+h1 {
 text-align: center;
-margin-bottom: 30px;
+color: #07152d;
+font-size: 34px;
+margin-bottom: 35px;
+}
+
+.section {
+background: white;
+padding: 25px;
+border-radius: 14px;
+margin-bottom: 20px;
+box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+}
+
+.section-title {
+color: #07152d;
+font-size: 22px;
+margin-bottom: 20px;
+border-right: 4px solid #d4af37;
+padding-right: 12px;
+}
+
+.field {
+margin-bottom: 18px;
+}
+
+.field:last-child {
+margin-bottom: 0;
 }
 
 label {
 display: block;
-margin-top: 18px;
-margin-bottom: 7px;
 font-weight: bold;
+margin-bottom: 8px;
+color: #172033;
+font-size: 15px;
 }
 
 input,
 select,
 textarea {
 width: 100%;
-padding: 13px;
-box-sizing: border-box;
-border: 1px solid #ddd;
-border-radius: 8px;
-font-size: 16px;
+border: 1px solid #d7dce4;
+border-radius: 10px;
+padding: 14px;
+font-family: Arial, sans-serif;
+font-size: 15px;
+background: white;
+color: #172033;
+outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+border-color: #d4af37;
 }
 
 textarea {
-height: 100px;
+min-height: 120px;
 resize: vertical;
 }
 
-button {
-width: 100%;
-margin-top: 25px;
-padding: 15px;
-background: #111827;
+.agreement {
+background: #07152d;
 color: white;
-border: none;
-border-radius: 8px;
-font-size: 18px;
+padding: 20px;
+border-radius: 12px;
+margin-bottom: 20px;
+}
+
+.agreement label {
+color: white;
+display: flex;
+align-items: flex-start;
+gap: 10px;
+font-weight: normal;
 cursor: pointer;
 }
 
-button:hover {
+.agreement input {
+width: 19px;
+height: 19px;
+margin-top: 4px;
+flex-shrink: 0;
+}
+
+.agreement a {
+color: #d4af37;
+text-decoration: none;
+}
+
+.submit-btn {
+width: 100%;
+border: none;
+background: #d4af37;
+color: #07152d;
+padding: 16px;
+border-radius: 10px;
+font-size: 17px;
+font-weight: bold;
+cursor: pointer;
+}
+
+.submit-btn:hover {
 opacity: 0.9;
+}
+
+footer {
+background: #050f21;
+color: #aeb7c7;
+text-align: center;
+padding: 25px 15px;
+margin-top: 50px;
+font-size: 13px;
+}
+
+footer a {
+color: #d4af37;
+text-decoration: none;
+}
+
+@media (max-width: 600px) {
+
+header {
+padding: 17px 5%;
+}
+
+.logo {
+font-size: 23px;
+}
+
+.back {
+padding: 8px 13px;
+font-size: 13px;
+}
+
+.container {
+margin: 30px auto;
+padding: 0 12px;
+}
+
+h1 {
+font-size: 29px;
+margin-bottom: 25px;
+}
+
+.section {
+padding: 18px;
+border-radius: 12px;
+}
+
+.section-title {
+font-size: 19px;
+}
+
+label {
+font-size: 14px;
+}
+
+input,
+select,
+textarea {
+font-size: 15px;
+padding: 13px;
+}
 }
 </style>
 </head>
@@ -84,22 +224,59 @@ opacity: 0.9;
 <body>
 
 <header>
-<h1>مسار | MASAR</h1>
+<div class="logo">MASAR</div>
+
+<a href="index.html" class="back">
+رجوع
+</a>
 </header>
 
-<div class="container">
+<main class="container">
 
-<h2>إرسال شحنة</h2>
+<h1>إرسال شحنة</h1>
 
-<label>اسم المستلم</label>
-<input type="text" placeholder="أدخل اسم المستلم">
+<!-- بيانات المرسل -->
+<section class="section">
 
-<label>رقم هاتف المستلم</label>
-<input type="tel" placeholder="أدخل رقم الهاتف">
+<h2 class="section-title">بيانات المرسل</h2>
 
-<label>المحافظة</label>
+<div class="field">
+<label>اسم المرسل</label>
+<input
+type="text"
+placeholder="أدخل اسم المرسل"
+>
+</div>
+
+<div class="field">
+<label>الرقم الوطني</label>
+<input
+type="text"
+inputmode="numeric"
+placeholder="أدخل الرقم الوطني"
+>
+</div>
+
+<div class="field">
+<label>رقم الهاتف</label>
+<input
+type="tel"
+placeholder="أدخل رقم الهاتف"
+>
+</div>
+
+</section>
+
+<!-- مكان الاستلام -->
+<section class="section">
+
+<h2 class="section-title">مكان الاستلام</h2>
+
+<div class="field">
+<label>اختر المحافظة</label>
+
 <select>
-<option>اختر المحافظة</option>
+<option value="">اختر المحافظة</option>
 <option>دمشق</option>
 <option>ريف دمشق</option>
 <option>حلب</option>
@@ -107,33 +284,125 @@ opacity: 0.9;
 <option>حماة</option>
 <option>اللاذقية</option>
 <option>طرطوس</option>
+<option>إدلب</option>
 <option>دير الزور</option>
 <option>الرقة</option>
 <option>الحسكة</option>
 <option>درعا</option>
 <option>السويداء</option>
 <option>القنيطرة</option>
-<option>إدلب</option>
 </select>
+</div>
 
-<label>عنوان الاستلام</label>
-<input type="text" placeholder="أدخل عنوان الاستلام">
+<div class="field">
+<label>اختر المدينة</label>
 
-<label>عنوان التسليم</label>
-<input type="text" placeholder="أدخل عنوان التسليم">
+<select>
+<option value="">اختر المدينة</option>
+</select>
+</div>
 
+<div class="field">
+<label>اختر المركز</label>
+
+<select>
+<option value="">اختر المركز</option>
+</select>
+</div>
+
+</section>
+
+<!-- بيانات المستلم -->
+<section class="section">
+
+<h2 class="section-title">بيانات المستلم</h2>
+
+<div class="field">
+<label>اسم المستلم</label>
+<input
+type="text"
+placeholder="أدخل اسم المستلم"
+>
+</div>
+
+<div class="field">
+<label>الرقم الوطني</label>
+<input
+type="text"
+inputmode="numeric"
+placeholder="أدخل الرقم الوطني"
+>
+</div>
+
+<div class="field">
+<label>رقم الهاتف</label>
+<input
+type="tel"
+placeholder="أدخل رقم الهاتف"
+>
+</div>
+
+</section>
+
+<!-- معلومات الشحنة -->
+<section class="section">
+
+<h2 class="section-title">معلومات الشحنة</h2>
+
+<div class="field">
 <label>محتوى الشحنة</label>
-<input type="text" placeholder="مثال: ملابس، مستندات، أجهزة">
 
+<textarea
+placeholder="اكتب محتوى الشحنة"
+></textarea>
+</div>
+
+<div class="field">
 <label>ملاحظات إضافية</label>
-<textarea placeholder="أي ملاحظات عن الشحنة"></textarea>
 
-<button type="button">
-إنشاء الشحنة
-</button>
+<textarea
+placeholder="اكتب أي ملاحظات إضافية"
+></textarea>
+</div>
+
+</section>
+
+<!-- الموافقة -->
+<div class="agreement">
+
+<label>
+
+<input type="checkbox">
+
+<span>
+أقر بأنني قرأت
+<a href="policy.html">سياسات وشروط MASAR</a>
+وأوافق عليها، وأؤكد أن محتويات الشحنة قانونية ومسموح بنقلها.
+</span>
+
+</label>
 
 </div>
 
-</body>
+<button class="submit-btn">
+متابعة إرسال الشحنة
+</button>
 
+</main>
+
+<footer>
+
+<div>
+© 2026 MASAR — جميع الحقوق محفوظة
+</div>
+
+<div style="margin-top: 8px;">
+<a href="policy.html">
+السياسات والشروط
+</a>
+</div>
+
+</footer>
+
+</body>
 </html>
