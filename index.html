@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MASAR | مسارك الآمن بين كل المدن</title>
+
+<style>
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+font-family: Arial, sans-serif;
+background: #f5f7fa;
+color: #172033;
+line-height: 1.6;
+}
+
+header {
+background: #07152d;
+color: white;
+padding: 20px 7%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 20px;
+position: relative;
+}
+
+.logo {
+font-size: 28px;
+font-weight: bold;
+letter-spacing: 2px;
+}
+.header-buttons {
+display: flex;
+align-items: center;
+gap: 10px;
+position: absolute;
+left: 20px;
+top: 15px;
+z-index: 1000;
+}
+.header-buttons .menu-btn {
+position: static;
+}
+.menu-btn {
+background: none;
+border: none;
+color: white;
+font-size: 26px;
+cursor: pointer;
+margin-left: 5px;
+}
+.header-btn {
+color: white;
+text-decoration: none;
+padding: 8px 14px;
+border: 1px solid rgba(255,255,255,0.5);
+border-radius: 8px;
+font-size: 14px;
+}
+z-index: 1000;
+}
+nav {
+display: none;
+align-items: center;
+gap: 10px;
+flex-wrap: wrap;
+}
+.menu-panel {
+display: none;
+position: absolute;
+top: 80px;
+left: 20px;
+background: #07152d;
+padding: 20px;
+border-radius: 12px;
+flex-direction: column;
+gap: 15px;
+z-index: 1000;
+}
+
+.menu-panel.show {
+display: flex;
+}
+nav a {
+color: white;
+text-decoration: none;
+font-size: 14px;
+padding: 8px 12px;
+}
+.menu-panel a {
+color: white;
+text-decoration: none;
+font-size: 16px;
+padding: 8px 15px;
+}
+
+.login,
+.policy-link {
+border: 1px solid rgba(255,255,255,0.4);
+border-radius: 8px;
+}
+
+.hero {
+background: #07152d;
+color: white;
+text-align: center;
+padding: 90px 20px 80px;
+}
+
+.hero h1 {
+font-size: 48px;
+line-height: 1.25;
+margin-bottom: 20px;
+}
+
+.gold {
+color: #d4af37;
+}
+
+.hero p {
+max-width: 650px;
+margin: 0 auto 30px;
+color: #cbd3df;
+font-size: 17px;
+}
+
+.buttons {
+display: flex;
+justify-content: center;
+gap: 15px;
+flex-wrap: wrap;
+}
+
+.btn {
+display: inline-block;
+text-decoration: none;
+padding: 13px 25px;
+border-radius: 9px;
+font-weight: bold;
+font-size: 15px;
+}
+
+.btn-primary {
+background: #d4af37;
+color: #07152d;
+}
+
+.btn-secondary {
+border: 1px solid rgba(255,255,255,0.5);
+color: white;
+}
+
+.stats {
+max-width: 1000px;
+margin: -35px auto 0;
+position: relative;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 15px;
+padding: 0 20px;
+}
+
+.stat {
+background: white;
+padding: 25px 15px;
+text-align: center;
+border-radius: 12px;
+box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.stat strong {
+display: block;
+font-size: 30px;
+color: #07152d;
+margin-bottom: 5px;
+}
+
+.stat span {
+color: #687386;
+font-size: 14px;
+}
+
+.section {
+max-width: 1100px;
+margin: 70px auto;
+padding: 0 20px;
+}
+
+.section-title {
+text-align: center;
+margin-bottom: 30px;
+}
+
+.section-title h2 {
+font-size: 30px;
+color: #07152d;
+margin-bottom: 8px;
+}
+
+.section-title p {
+color: #687386;
+font-size: 15px;
+}
+
+.steps {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 15px;
+}
+
+.card {
+background: white;
+padding: 25px 18px;
+border-radius: 12px;
+text-align: center;
+box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+}
+
+.number {
+width: 42px;
+height: 42px;
+margin: 0 auto 15px;
+border-radius: 50%;
+background: #07152d;
+color: #d4af37;
+display: flex;
+justify-content: center;
+align-items: center;
+font-weight: bold;
+}
+
+.card h3 {
+color: #07152d;
+margin-bottom: 8px;
+font-size: 18px;
+}
+
+.card p {
+color: #687386;
+font-size: 14px;
+}
+
+.coverage {
+background: #07152d;
+color: white;
+text-align: center;
+padding: 65px 20px;
+margin-top: 70px;
+}
+
+.coverage h2 {
+font-size: 30px;
+margin-bottom: 12px;
+}
+
+.coverage p {
+color: #cbd3df;
+max-width: 650px;
+margin: auto;
+font-size: 16px;
+}
+
+.services {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 15px;
+}
+
+.service-card {
+background: white;
+padding: 25px 18px;
+border-radius: 12px;
+text-align: center;
+box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+}
+
+.service-card h3 {
+color: #07152d;
+margin-bottom: 8px;
+font-size: 18px;
+}
+
+.service-card p {
+color: #687386;
+font-size: 14px;
+}
+
+.cta {
+background: #d4af37;
+color: #07152d;
+text-align: center;
+padding: 55px 20px;
+margin-top: 70px;
+}
+
+.cta h2 {
+font-size: 30px;
+margin-bottom: 10px;
+}
+
+.cta p {
+margin-bottom: 22px;
+}
+
+.cta a {
+display: inline-block;
+background: #07152d;
+color: white;
+text-decoration: none;
+padding: 13px 28px;
+border-radius: 9px;
+font-weight: bold;
+}
+
+footer {
+background: #050f21;
+color: #aeb7c7;
+text-align: center;
+padding: 25px 15px;
+font-size: 13px;
+}
+
+footer a {
+color: #d4af37;
+text-decoration: none;
+}
+
+@media (max-width: 700px) {
+
+header {
+padding: 16px 5%;
+}
+
+.logo {
+font-size: 22px;
+}
+
+nav {
+gap: 4px;
+}
+
+nav a {
+font-size: 12px;
+padding: 6px 7px;
+}
+
+.hero {
+padding: 65px 15px;
+}
+
+.hero h1 {
+font-size: 34px;
+}
+
+.hero p {
+font-size: 15px;
+}
+
+.stats {
+gap: 7px;
+padding: 0 10px;
+}
+
+.stat {
+padding: 17px 5px;
+}
+
+.stat strong {
+font-size: 23px;
+}
+
+.stat span {
+font-size: 11px;
+}
+
+.section {
+margin: 50px auto;
+padding: 0 10px;
+}
+
+.section-title h2 {
+font-size: 25px;
+}
+
+.steps {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 7px;
+}
+
+.card {
+padding: 15px 6px;
+}
+
+.number {
+width: 32px;
+height: 32px;
+margin-bottom: 9px;
+font-size: 13px;
+}
+
+.card h3 {
+font-size: 13px;
+margin-bottom: 5px;
+}
+
+.card p {
+font-size: 11px;
+line-height: 1.5;
+}
+
+.coverage {
+padding: 50px 15px;
+margin-top: 50px;
+}
+
+.coverage h2 {
+font-size: 25px;
+}
+
+.coverage p {
+font-size: 14px;
+}
+
+.services {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 7px;
+}
+
+.service-card {
+padding: 15px 6px;
+}
+
+.service-card h3 {
+font-size: 13px;
+}
+
+.service-card p {
+font-size: 11px;
+line-height: 1.5;
+}
+
+.cta {
+margin-top: 50px;
+padding: 45px 15px;
+}
+
+.cta h2 {
+font-size: 25px;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">MASAR</div>
+<div class="header-buttons">
+<a href="contact.html" class="header-btn">تواصل معنا</a>
+<a href="login.html" class="header-btn">تسجيل الدخول</a>
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+</div>
+<nav>
+
+
+
+</nav>
+
+</header>
+<div id="menu-panel" class="menu-panel">
+<a href="index.html">الرئيسية</a>
+<a href="login.html">تسجيل الدخول</a>
+<a href="send.html">إرسال شحنة</a>
+<a href="tracking.html">تتبع شحنتك</a>
+<a href="#">شركاؤنا</a>
+<a href="#">الوظائف / فرص العمل</a>
+<a href="#">من نحن</a>
+<a href="#">انضم كشريك</a>
+<a href="#">تواصل معنا</a>
+<a href="policy.html">السياسة والشروط</a>
+
+</div>
+
+<section class="hero">
+
+<h1>
+مسارك الآمن
+<span class="gold">بين كل المدن</span>
+</h1>
+
+<p>
+خدمة شحن وتوصيل موثوقة تربط المدن والمحافظات داخل سوريا
+بطريقة سهلة وآمنة.
+</p>
+
+<div class="buttons">
+
+<a href="send.html" class="btn btn-primary">
+إرسال شحنة
+</a>
+
+<a href="tracking.html" class="btn btn-secondary">
+تتبع شحنتك
+</a>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stat">
+<strong>14</strong>
+<span>محافظة</span>
+</div>
+
+<div class="stat">
+<strong>500+</strong>
+<span>مركز استلام وتسليم</span>
+</div>
+
+<div class="stat">
+<strong>24/7</strong>
+<span>خدمة عملاء</span>
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>كيف يعمل مسار؟</h2>
+
+<p>
+ثلاث خطوات بسيطة لإرسال شحنتك
+</p>
+
+</div>
+
+<div class="steps">
+
+<div class="card">
+
+<div class="number">1</div>
+
+<h3>المركز الأول</h3>
+
+<p>
+تسلّم شحنتك في أقرب مركز مسار.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="number">2</div>
+
+<h3>التوصيل</h3>
+
+<p>
+نقل موثوق وسريع.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="number">3</div>
+
+<h3>المركز الأخير</h3>
+
+<p>
+تصل شحنتك إلى مركز مسار في المدينة المطلوبة.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="coverage">
+
+<h2>
+تغطية واسعة داخل سوريا
+</h2>
+
+<p>
+مسار يهدف إلى ربط مختلف المدن والمحافظات
+من خلال شبكة واسعة من مراكز الاستلام والتسليم.
+</p>
+
+</section>
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>خدمات مسار</h2>
+
+<p>
+كل ما تحتاجه لإرسال ومتابعة شحنتك
+</p>
+
+</div>
+
+<div class="services">
+
+<div class="service-card">
+
+<h3>شحن آمن</h3>
+
+<p>
+نقل شحنتك بطريقة منظمة وآمنة.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>تتبع الشحنة</h3>
+
+<p>
+تابع حالة شحنتك باستخدام رقم التتبع.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>خدمة العملاء</h3>
+
+<p>
+دعم ومساعدة على مدار الساعة.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<h2>
+جاهز لإرسال شحنتك؟
+</h2>
+
+<p>
+ابدأ الآن مع MASAR
+</p>
+
+<a href="send.html">
+إرسال شحنة
+</a>
+
+</section>
+
+<footer>
+
+<div>
+© 2026 MASAR — جميع الحقوق محفوظة
+</div>
+
+<div style="margin-top: 8px;">
+
+<a href="policy.html">
+السياسات والشروط
+</a>
+
+</div>
+
+</footer>
+<script>
+function toggleMenu() {
+const menu = document.getElementById("menu-panel");
+menu.classList.toggle("show");
+}
+</script>
+</body>
+</html>
